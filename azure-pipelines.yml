@@ -6,7 +6,7 @@
 trigger:
 - master
 
-pool: local
+pool: Local agent pool
 
 steps:
 - task: NodeTool@0
