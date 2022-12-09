@@ -54,3 +54,14 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BD80E878420047CD8234B20537B2BC7E }}
           package: .
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Run Bridgecrew 
+        id: Bridgecrew
+        uses: bridgecrewio/bridgecrew-action@master 
+        env:
+          PRISMA_API_URL: https://api.eu.prismacloud.io
+        with:
+          api-key: ${{ secrets.BC_API_KEY }}
