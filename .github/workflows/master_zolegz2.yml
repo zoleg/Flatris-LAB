@@ -54,6 +54,7 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BD80E878420047CD8234B20537B2BC7E }}
           package: .
+          
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
